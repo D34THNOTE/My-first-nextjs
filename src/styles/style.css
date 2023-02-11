@@ -1,0 +1,275 @@
+*   { /* UNIVERSAL RESET OF ALL MARGINS */
+    margin:0;
+    padding:0;
+}
+
+html {
+    background-color: #6e6e6e;
+    font-family: sans-serif;
+}
+body {
+    min-width: 600px;
+}
+
+header,
+footer {
+    background-color: #484848;
+}
+
+header,
+main {
+    margin: 1rem;
+    border: none;
+    border-radius: 10px;
+}
+
+footer {
+    bottom: 0;
+    background-color: #525252;
+    font-size: 14px;
+    padding: 12px 0;
+    position: fixed;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* 4.1 change - replacing 3 header thigs with one */
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 0.6;
+    max-inline-size: 15ch;
+}
+ /* 4.2 changes to nav things */
+nav {
+    display: block;
+    background-color: #525252;
+}
+
+nav ul {
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+nav ul li button {
+    background-color: transparent;
+    border: 0;
+}
+
+nav a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 1rem;
+    text-align: center;
+    font-size: min(30px, calc((100vw)/36));
+    font-weight: 800;
+    width: fit-content;
+}
+
+nav ul li a,
+nav ul li button{
+    display: inline-block;
+    color: #9c9c9c; /* COLOR OF NAV TEXT */
+    padding: 1rem 2rem;
+    text-decoration: none;
+}
+
+nav ul li a:hover,
+nav ul li button:hover{
+    color: #d4d4d4;
+    border: none;
+}
+
+nav ul li a.active,
+nav ul li button.active{
+    color: #fafafa;
+    border: none;
+}
+
+main {
+    padding: 1.5rem;
+}
+
+/* 5. RECORD LIST */
+/* 5.2 Header of content section */
+main {
+    position: absolute;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 30px;
+    margin-inline-end: 30px;
+}
+
+img {
+    display: inline-block; /* makes images respond to margins */
+    padding: 5px;
+    width: 30%;
+    height: auto;
+}
+
+.bigImg {
+    padding: 5px;
+    width: 50%;
+    height: auto;
+}
+
+.lastImg {
+    margin-bottom: 3em;
+}
+
+.description {
+    position: absolute;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 30px;
+    margin-inline-end: 30px;
+    text-align: center;
+
+    color: #c2c2c2;
+}
+
+.lastH2 {
+    display: inline-block;
+    margin-bottom: 50px;
+}
+
+.gap {
+    padding-top: 30px;
+    white-space: pre-line
+}
+
+.pElement {
+    color: #c2c2c2;
+    padding-top: 50px;
+    text-align: center;
+    font-size: 21px;
+}
+
+.contactTransformation {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.github{
+    margin: 0 1rem;
+    transition: transform 250ms;
+}
+
+.iconActive {
+    text-align: center;
+}
+
+.iconActive a:hover{
+    color:lightblue;
+}
+
+main h1,
+main h2 {
+    color: #c2c2c2;
+}
+
+main h1 {
+    text-align: center;
+}
+
+main h2 {
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+
+/* 6. Media queries, defining things for different sizes, put them AFTER all the previous styling */
+/* an explanation for myself: we "mainly" do changes for "tablet size" devices because they also apply to the mobile below, the block for mobile only is executed after the tablet
+section so that we don't have to re-write every style definition for mobile separately */
+
+@media all and (max-width: 768px) { /* tablets, 768px because of ipads */
+
+    body {
+        min-width: 360px;
+    }
+
+    /* 6.2 Header */
+    header {
+        flex-direction: column;
+    }
+
+    header h1 { 
+        text-align: center;
+    }
+
+    header img {
+        align-self: center;
+    }
+
+    /* 6.3 Navigation menu */
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        flex-basis: 50%;
+        text-align: center;
+    }
+    
+    nav ul li a,
+    nav ul li button{
+        display: block;
+    }
+
+}
+
+@media all and (max-width: 414px) { /* smartphones */
+
+    /* removing border-radius for mobile because it looks trash */
+    body, nav, nav ul, header, main, footer {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    nav ul li {
+        flex-basis: 100%;
+    }
+
+    /* removing border-radius for mobile because it looks trash */
+    nav ul li a:hover,
+    nav ul li button:hover{
+        border-radius: 0px;
+    }
+    
+    nav ul li a.active,
+    nav ul li button:hover{
+        border-radius: 0px;
+    }
+    
+
+    .list-actions-button-details,
+    .list-actions-button-edit,
+    .list-actions-button-delete {
+        margin: 0rem; 
+    }
+
+    nav a {
+        font-size: 1.5em;
+    }
+
+    .contactTransformation {
+        position: absolute;
+        left: 50%;
+        top: 65%;
+        transform: translate(-50%,-50%);
+    }
+
+
+}
