@@ -1,10 +1,5 @@
-*   { /* UNIVERSAL RESET OF ALL MARGINS */
-    margin:0;
-    padding:0;
-}
-
 html {
-    background-color: #6e6e6e;
+    background-color: #3281af;
     font-family: sans-serif;
 }
 body {
@@ -12,26 +7,26 @@ body {
 }
 
 header,
+main,
 footer {
-    background-color: #484848;
+    background-color: white;
 }
 
 header,
-main {
+main,
+footer,
+nav {
     margin: 1rem;
     border: none;
     border-radius: 10px;
 }
 
+header,
 footer {
-    bottom: 0;
-    background-color: #525252;
-    font-size: 14px;
-    padding: 12px 0;
-    position: fixed;
-    text-align: center;
-    vertical-align: middle;
-    width: 100%;
+    background-color: #59a0e7; /* background panel color */
+    color:#313131; /* text color*/
+    padding: 1rem;
+    
 }
 
 /* 4.1 change - replacing 3 header thigs with one */
@@ -48,15 +43,13 @@ header h1 {
 }
  /* 4.2 changes to nav things */
 nav {
-    display: block;
-    background-color: #525252;
+    background-color: #59a0e7;
 }
 
 nav ul {
     display: flex;
     padding: 0;
     list-style-type: none;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 nav ul li button {
@@ -64,130 +57,266 @@ nav ul li button {
     border: 0;
 }
 
-nav a {
-    text-decoration: none;
-    display: inline-block;
-    padding: 1rem;
-    text-align: center;
-    font-size: min(30px, calc((100vw)/36));
-    font-weight: 800;
-    width: fit-content;
-}
-
 nav ul li a,
 nav ul li button{
     display: inline-block;
-    color: #9c9c9c; /* COLOR OF NAV TEXT */
+    color: #131212;
     padding: 1rem 2rem;
     text-decoration: none;
 }
 
 nav ul li a:hover,
 nav ul li button:hover{
-    color: #d4d4d4;
+    background-color: #52d7ff;
+    color: #1b191b;
     border: none;
+    border-radius: 10px;
 }
 
 nav ul li a.active,
 nav ul li button.active{
-    color: #fafafa;
+    background-color: #83c8f7;
+    color: #313131;
     border: none;
+    border-radius: 10px;
 }
 
 main {
     padding: 1.5rem;
 }
 
+footer {
+    text-align: center;
+}
+
+
 /* 5. RECORD LIST */
 /* 5.2 Header of content section */
-main {
-    position: absolute;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 30px;
-    margin-inline-end: 30px;
+main h2 {
+    border-bottom: 1px solid #7f8c8d;
+    margin-bottom: 2rem;
 }
 
-img {
-    display: inline-block; /* makes images respond to margins */
-    padding: 5px;
-    width: 30%;
-    height: auto;
+/* 5.3 Table */
+.table-list {
+    border-collapse: collapse;
+    color: #313131; /* color of all text within the list */
+    width: 100%;
+    margin-bottom: 1rem; /* move the "back" button lower */
 }
 
-.bigImg {
-    padding: 5px;
-    width: 50%;
-    height: auto;
+.table-list,
+.table-list th,
+.table-list td {
+    border: 1px solid #bdc3c7 /* border color */
 }
 
-.lastImg {
-    margin-bottom: 3em;
+.table-list th,
+.table-list td {
+    padding: 0.5rem;
 }
 
-.description {
-    position: absolute;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 30px;
-    margin-inline-end: 30px;
+.table-list th,
+.table-list tbody tr:nth-child(even) {
+    background-color: #ecf0f1;
+}
+
+/* 5.3.1 Options buttons */
+.list-actions {
+    margin: 0;
     text-align: center;
-
-    color: #c2c2c2;
+    list-style-type: none;
+    padding: 0;
 }
 
-.lastH2 {
+.list-actions li {
     display: inline-block;
-    margin-bottom: 50px;
 }
 
-.gap {
-    padding-top: 30px;
-    white-space: pre-line
+.list-actions-button-details,
+.list-actions-button-edit,
+.list-actions-button-delete {
+    display:inline-block;
+    width: 75px;
+    padding: 0.25rem 0.5rem;
 }
 
-.pElement {
-    color: #c2c2c2;
-    padding-top: 50px;
+/* 5.3.2 Add new product button */
+.list-actions-button-details, /* this is separate from section above deliberately */
+.list-actions-button-edit,
+.list-actions-button-delete,
+.button-add,
+.form-button-submit, /* buttons from point 6.2 */
+.form-button-cancel,
+.form-button-edit,
+.form-button-back 
+{
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
     text-align: center;
-    font-size: 21px;
+    font-size: 0.8rem;
 }
 
-.contactTransformation {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+/* changed margin-right to margin here */
+.list-actions-button-details,
+.list-actions-button-edit,
+.list-actions-button-delete {
+    margin: 1rem; 
 }
 
-.github{
-    margin: 0 1rem;
-    transition: transform 250ms;
+.list-actions-button-details,
+.form-button-back { /* colors of buttons */
+    background-color: #5aa2d1;
 }
 
-.iconActive {
-    text-align: center;
+.list-actions-button-details:hover,
+.form-button-back:hover {
+    background-color: #3498db;
 }
 
-.iconActive a:hover{
-    color:lightblue;
+.list-actions-button-edit,
+.form-button-edit {
+    background-color: #f8c067;
 }
 
-main h1,
-main h2 {
-    color: #c2c2c2;
+.list-actions-button-edit:hover,
+.form-button-edit:hover {
+    background-color: #fcb900;
 }
 
-main h1 {
-    text-align: center;
+.list-actions-button-delete,
+.form-button-cancel {
+    background-color: #e96d5f;
 }
 
-main h2 {
-    text-align: center;
-    padding: 10px;
+.list-actions-button-delete:hover,
+.form-button-cancel:hover { 
+    background-color: #e74c3c;
+}
+
+/* RIGHT HEREEEEEEEEEEEEEEEEEEEEEE */
+
+.button-add,
+.form-button-submit, /* buttons from point 6.2 */
+.form-button-cancel,
+.form-button-edit,
+.form-button-back  
+{
+    padding: 0.5rem 1rem;
+}
+
+.button-add,
+.form-button-submit {
+    background-color: #59a0e7;
+}
+
+.button-add:hover,
+.form-button-submit:hover {
+    background-color: #2782dd;
+}
+/* end of colors of buttons */
+
+
+/* 6. NEW RECORD FORM */
+/* 6.1 Fields */
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    box-sizing: border-box;
+    padding: 0; margin: 0;
+}
+
+textarea {
+    overflow: auto;
+}
+
+/* 5.1 remove width: 300px; from form, add grid type layout */
+.form {
+    display: grid;
+    grid-template-columns: 150px 300px 1fr;
+    gap: 1rem;
+}
+
+.form select,
+.form input[type="text"],
+.form input[type="number"],
+.form input[type="date"],
+.form input[type="email"] {
+    border: 1px solid #7f8c8d;
+    color: #2c3e50;
+    border-radius: 5px;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.form label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.symbol-required {
+    color: black;
+}
+
+/* 6.2 Buttons */
+/* 5.1 add grid attribute for buttons */
+.form-buttons {
+    margin-top: 2rem;
+    grid-column: 1 / span 2;
+}
+
+.form-button-submit,
+.form-button-cancel {
+    width: 100%;
+}
+
+.form-button-cancel {
+    box-sizing: border-box;
+    display: block;
+}
+
+.form-button-submit {
+    margin-bottom: 0.5rem;
+}
+
+/*6.3 Form validation errors */
+.form input.error-input,
+.form select.error-input {
+    border: 3px solid #e74c3c;
+}
+
+.errors-text {
+    display: block;
+    font-size: 0.85rem;
+    line-height: 2.25rem;
+    margin-top: 0.5rem;
+    color: #e74c3c;
 }
 
 
+
+/* additional stuff */
+.delete-message {
+    margin-top: 2rem;
+    color: #ff1900;
+}
+
+input[type=checkbox] { /* checkbox size */
+    margin-top: 1rem;
+    transform: scale(1);
+}
+
+/* React.js stuff */
+
+.success {
+    color: #29ff1a
+}
 
 
 /* 6. Media queries, defining things for different sizes, put them AFTER all the previous styling */
@@ -228,6 +357,61 @@ section so that we don't have to re-write every style definition for mobile sepa
         display: block;
     }
 
+
+
+    /* 6.4 Forms */
+    .form {
+        grid-template-columns: 1fr;
+        row-gap: unset;
+        margin-left: unset;
+    }
+
+    .form-buttons {
+        grid-column: 1 / 1;
+    }
+
+    input[type=checkbox] { /* checkbox size */
+        transform: scale(1.6);
+    }
+
+    /* buttons */
+    /* OPTIONAL - to make buttons always appear in a single line on tablets and mobile
+    .list-actions {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+    }
+    */
+    
+    /* 6. Tables - there's no actual tutorial so hang on tight */
+    
+    table {
+        border: 0;
+      }
+      
+      table thead {
+        display: none;
+      }
+      
+      table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625rem;
+      }
+      
+      table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8rem;
+        text-align: right;
+      }
+      
+      table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+      }
 }
 
 @media all and (max-width: 414px) { /* smartphones */
@@ -259,17 +443,5 @@ section so that we don't have to re-write every style definition for mobile sepa
     .list-actions-button-delete {
         margin: 0rem; 
     }
-
-    nav a {
-        font-size: 1.5em;
-    }
-
-    .contactTransformation {
-        position: absolute;
-        left: 50%;
-        top: 65%;
-        transform: translate(-50%,-50%);
-    }
-
 
 }

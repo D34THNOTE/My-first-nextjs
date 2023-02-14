@@ -1,9 +1,8 @@
-import ProductListTableRow from "@/components/ProductListTableRow";
+import ProductListTableRow from "@/components/ProductModel/ProductListTableRow";
 
-export default function ProductListTable( listOfProducts: any[] ) {
+export default function ProductListTable({listOfProducts}: { listOfProducts: any[] } ) {
     const products = listOfProducts
 
-    console.log(products)
     return (
         <table className="table-list">
             <thead>
@@ -17,11 +16,10 @@ export default function ProductListTable( listOfProducts: any[] ) {
             </tr>
             </thead>
             <tbody>
-            {products}
+            {products.map(product =>
+                <ProductListTableRow productData={product} key={product.IDproduct} />
+            )}
             </tbody>
         </table>
     )
 }
-// {products.map(product =>
-//     <ProductListTableRow productData={listOfProducts} key={product.IDproduct} />
-// )}

@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 
-export default function ProductListTableRow( aProduct: any ) {
-    const product = aProduct;
+export default function ProductListTableRow( { productData } ) {
+    const product = productData;
 
     return (
         <tr key={product.IDproduct}>
