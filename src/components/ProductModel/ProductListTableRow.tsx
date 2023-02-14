@@ -1,6 +1,8 @@
 import Link from "next/link";
+import {formatDate} from "@/helpers/formatDate";
 
 
+// @ts-ignore
 export default function ProductListTableRow( { productData } ) {
     const product = productData;
 
@@ -9,8 +11,8 @@ export default function ProductListTableRow( { productData } ) {
             <td data-label="IDproduct">{product.IDproduct}</td>
             <td data-label="Name">{product.name}</td>
             <td data-label="Price">{product.price}</td>
-            <td data-label="Production date">{product.productionDate}</td>
-            <td data-label="End distribution date">{product.endDistributionDate}</td>
+            <td data-label="Production date">{formatDate(product.productionDate)}</td>
+            <td data-label="End distribution date">{formatDate(product.endDistributionDate)}</td>
             <td>
                 <ul className="list-actions">
                     <li>

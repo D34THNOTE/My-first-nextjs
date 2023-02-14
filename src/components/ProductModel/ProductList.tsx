@@ -2,6 +2,7 @@ import Link from "next/link";
 import ProductListTable from "@/components/ProductModel/ProductListTable";
 
 
+// @ts-ignore
 export default function MainList( { products } ) {
     const listOfProducts = products;
 
