@@ -1,6 +1,6 @@
 import React from "react";
 
-function FormInput(props) {
+function FormInput(props: { error: string; name: string | undefined; label: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; required: any; type: string | (string & {}) | undefined; id: string | undefined; placeholder: string | undefined; value: string | number | readonly string[] | undefined; onChange: React.ChangeEventHandler<HTMLInputElement> | undefined; }) {
 
     const className = props.error === "" ? "" : "error-input";
 

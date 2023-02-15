@@ -1,9 +1,10 @@
 import React from "react";
 import {formMode} from "../../helpers/formHelper";
 import Link from "next/link";
+import { UrlObject } from "url";
 
 
-function FormButtons(props) {
+function FormButtons(props: { formMode: string; error: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; cancelPath: string | UrlObject; }) {
     const submitButtonLabel = props.formMode === formMode.NEW ? "Add" : "Edit";
 
     return (

@@ -2,7 +2,7 @@ import {formValidationKeys} from "@/helpers/formHelper";
 import {checkDate, checkPriceRange, checkRequired, checkTextLengthRange} from "@/helpers/validationCommon";
 
 
-export function validateField(fieldName, fieldValue) {
+export function validateField(fieldName: string, fieldValue: string | number | Date) {
     let errorMessage = "";
     if (fieldName === "name") {
         if(!checkRequired(fieldValue)) {
