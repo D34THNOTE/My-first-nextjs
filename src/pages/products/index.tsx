@@ -1,13 +1,6 @@
 import MainList from "@/components/ProductModel/ProductList";
 import {getProducts} from "@/api/productAPI";
-
-type Product = {
-    productID: number,
-    name: string,
-    price: number,
-    productionDate: Date,
-    endDistributonDate: Date
-}
+import {Product} from "@/types/product";
 
 type Props =  {
     products: Product[]

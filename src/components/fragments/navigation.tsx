@@ -9,8 +9,8 @@ function Navigation() {
             <ul>
                 <li><Link href="/" >Main page</Link></li>
                 <li><Link href="/products" >Products</Link></li>
-                <li><Link href="/Order" >Orders</Link></li>
-                <li><Link href="/OrderedProducts" >Ordered products</Link></li>
+                <li><Link href="/order" >Orders</Link></li>
+                <li><Link href="/orderedProducts" >Ordered products</Link></li>
             </ul>
         </nav>
     )

@@ -11,7 +11,7 @@ export default function MainList( { products } ) {
             <h2>Products</h2>
             <ProductListTable listOfProducts={listOfProducts} />
             <div>
-                <p><Link href="/ProductModel/add" className="button-add">Add a new product</Link></p>
+                <p><Link href="/products/add" className="button-add">Add a new product</Link></p>
                 <p className="delete-message"></p>
             </div>
         </main>
